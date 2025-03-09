@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IllustrationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IllustrationsController::class, 'index'])->name('index');
+Route::get('/illustrations/{name}', [IllustrationsController::class, 'illustrations'])->name('illustrations');

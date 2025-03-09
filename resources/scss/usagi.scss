@@ -1,0 +1,93 @@
+$white: #fff;
+$yellow: #fff45c;
+$brown: #996c33;
+$red: #f29b76;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: $yellow;
+}
+.usagi {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    *, *::before, *::after {
+        position: absolute;
+    }
+    &__face {
+        bottom: 0;
+        width: 200px;
+        height: 120px;
+        background-color: $white;
+        border-radius: 68px 57px 90px 90px / 114px 114px 80px 60px;
+        &::before {
+            content: "";
+            display: block;
+            top: -8px;
+            left: -10px;
+            width: 220px;
+            height: 136px;
+            background-color: $brown;
+            border-radius: 80px 60px 90px 60px / 80px 100px 60px 60px;
+            z-index: -1;
+        }
+    }
+    &__ears {
+        width: 200px;
+
+    }
+    &__ear {
+        top: 10px;
+        width: 60px;
+        height: 130px;
+        background-color: $white;
+        box-shadow: 5px 0 0 6px $brown, -2px -5px 0 6px $brown;
+
+        &--right {
+            right: 14px;
+            border-radius: 60px 40px 10px 10px / 90px 140px 80px 80px;
+            transform:rotate(10deg)
+        }
+        &--left {
+            left: 20px;
+            border-radius: 60px 60px 10px 10px / 140px 90px 80px 80px;
+            transform:rotate(-1deg);
+        }
+    }
+    &__eyes {
+        width: 70px;
+        top: 30px;
+        left: 30%;
+        transform:rotate(1deg);
+    }
+    &__eye {
+        width: 14px;
+        height: 26px;
+        background-color: $brown;
+        border-radius: 6px 4px / 8px 8px;
+
+
+        &--right {
+            right: 0;
+        }
+        &--left {
+            left: 0
+        }
+    }
+    &__mouth {
+        top: 74px;
+        left: 37%;
+        width:40px;
+        height: 25px;
+        background-color: $red;
+        border-radius: 4px 4px 20px 30px / 4px 4px 30px 30px;
+        transform:rotate(2deg);
+    }
+}

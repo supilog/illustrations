@@ -1,0 +1,185 @@
+/* カスタムプロパティ */
+:root {
+    --35p-pink: #EEA5AC;
+    --35p-mark: #76C9EE;
+    --35p-white: #ffffff;
+    --35p-black: #141414;
+    --right: auto;
+    --left: auto;
+    --rotate: 1;
+}
+
+/* 共通のスタイル */
+.face *,
+.face *::before,
+.face *::after {
+    position: absolute;
+    content: "";
+}
+
+/* コンテナ */
+.container {
+    position: relative;
+    width: 260px;
+    height: 220px;
+}
+
+/* 輪郭 */
+.face {
+    margin: 0 auto;
+    position: relative;
+    width: 250px;
+    height: 210px;
+    //overflow: hidden;
+    background-color: var(--35p-white);
+    border: solid 4px var(--35p-black);
+    border-radius: 50% / 50% 50% 50% 50%;
+
+    &::before{
+        content: "";
+        display:block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 70px;
+        height: 70px;
+        border: solid 3px var(--35p-black);
+        background-color: var(--35p-pink);
+        transform: rotate(10deg);
+    }
+
+    &::after{
+        content: "";
+        display:block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 70px;
+        height: 70px;
+        border: solid 4px var(--35p-black);
+        background-color: var(--35p-white);
+        border-bottom: none;
+        border-left: none;
+        transform: rotate(-10deg);
+    }
+
+    .eye {
+        top: 50%;
+        right: var(--right);
+        left: var(--left);
+        width: 10px;
+        height: 10px;
+        background-color: var(--35p-black);
+        border-radius: 50%;
+    }
+
+    .mark {
+        top: 28%;
+        left: calc(50% - 15px);
+        width: 30px;
+        height: 40px;
+        //background-color: var(--35p-mark);
+
+        .part1 {
+            top: 1px;
+            left: -1.58px;
+            width: 20px;
+            height: 0px;
+            background-color: transparent;
+            border: 2px solid var(--35p-mark);
+            transform: rotate(-55deg);
+            border-bottom-right-radius: 50px;
+            border-radius: 1000% / 0 0 50px 0;
+            border-top: none;
+        }
+
+        .part2 {
+            top: 9px;
+            left: 2px;
+            width: 20px;
+            height: 10px;
+            background: transparent;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            transform: rotate(180deg);
+            border: 2px solid var(--35p-mark);
+            border-bottom: none;
+        }
+    }
+
+    .mouth {
+        top: 58%;
+        left: 30%;
+        width: 40%;
+        height: 30%;
+
+        .top {
+            position: relative;
+
+            &::before {
+                content: "";
+                top: 0px;
+                left: 5px;
+                width: 50px;
+                height: 30px;
+                border: solid 2px var(--35p-black);
+                border-radius: 50% / 50% 50% 50% 50%;
+                transform: rotate(-25deg);
+                background-color: var(--35p-white);;
+            }
+
+            &::after {
+                content: "";
+                top: 0px;
+                right: 5px;
+                width: 50px;
+                height: 30px;
+                border: solid 2px var(--35p-black);
+                border-radius: 50% / 50% 50% 50% 50%;
+                transform: rotate(25deg);
+                background-color: var(--35p-white);;
+            }
+        }
+
+        .nose {
+            width: 20px;
+            height: 20px;
+            left: calc(50% - 10px);
+            top: -2px;
+            background-color: var(--35p-white);
+
+            .main {
+                position: relative;
+                top: -2px;
+                width: 8px;
+                height: 6px;
+                left: calc(50% - 4px);
+                border-bottom: 6px solid var(--35p-black);
+                border-radius: 50%/4px 4px 0 0;
+                transform: rotate(180deg);
+            }
+        }
+
+        .bottom {
+            content: "";
+            top: 18px;
+            left: calc(50% - 25px);
+            width: 50px;
+            height: 30px;
+            border: solid 2px var(--35p-black);
+            border-radius: 50% / 50% 50% 50% 50%;
+            transform: rotate(90deg);
+            background-color: var(--35p-pink);
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
